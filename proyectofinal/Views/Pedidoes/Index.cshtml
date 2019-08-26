@@ -1,0 +1,141 @@
+﻿@model IEnumerable<proyectofinal.Models.Pedido>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gourmet &mdash; Colorlib Website Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|DM+Serif+Display:400,400i&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="ftco-32x32.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+   
+    <!-- END header -->
+
+    <div class="slider-wrap">
+        <div class="slider-item" style="background-image: url('../../wwwroot/img/hero_1.png');">
+
+            <div class="container">
+                <div class="row slider-text align-items-center justify-content-center">
+                    <div class="col-md-8 text-center col-sm-12 ">
+                        <h1 data-aos="fade-up">Datos actuales</h1>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row slider-text align-items-center justify-content-center">
+                        <div class="col-md-8 text-center col-sm-12 ">
+                            <h1 data-aos="fade-up" data-aos-delay="100"><a asp-action="Create">Agregar nuevo pedido</a></h1>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- END slider -->
+    </div>
+
+
+    <section class="section bg-light pt-0 bottom-slant-gray">
+
+        <div class="clearfix mb-5 pb-5">
+            <div class="container-fluid">
+                <div class="row" data-aos="fade">
+                    <div class="col-md-12 text-center heading-wrap">
+                        <h2>Mis Pedidos</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <p>
+
+            </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Proveedor)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FechaPedido)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Proveedor.correo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FechaPedido)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.PedidoID">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.PedidoID">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.PedidoID">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+
+
+
+        </div>
+    </section> <!-- .section -->
+
+
+
+
+    
+    <!-- END footer -->
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16" /></svg></div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/aos.js"></script>
+
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/magnific-popup-options.js"></script>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

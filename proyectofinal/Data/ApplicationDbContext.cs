@@ -15,5 +15,6 @@ namespace proyectofinal.Data
         }
         public DbSet<proyectofinal.Models.Proveedor> Proveedor { get; set; }
         public DbSet<proyectofinal.Models.usuario> usuario { get; set; }
+        public DbSet<proyectofinal.Models.Pedido> Pedido { get; set; }
     }
 }
